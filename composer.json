@@ -1,0 +1,12 @@
+{
+    "name":        "s-nakajima/sample-elasticsesarch",
+    "require": {
+         "elasticsearch/elasticsearch": "~5.0"
+    },
+    "config": {
+        "vendor-dir": "vendors",
+        "process-timeout": 3000
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
