@@ -7,7 +7,7 @@ ElasticSearchサンプルプログラム
 ~~~~
 # sudo -s
 
-### JAVAのインストール
+#-- JAVAのインストール
 # yum -y install java
 
 #-- elasticsearch、kibanaのインストール
