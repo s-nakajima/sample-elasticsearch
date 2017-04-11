@@ -88,22 +88,16 @@ $ curl -XGET http://localhost:9200/_aliases
 * インデックス（DB）作成
 ~~~~
 PUT hoge_index
-    or
-PUT /hoge_index
 ~~~~
 
 * インデックス（DB）の削除
 ~~~~
 DELETE hoge_index
-    or
-DELETE /hoge_index
 ~~~~
 
 * 全インデックス（DB）の削除
 ~~~~
-DELETE /*
-    or
-DELETE /*
+DELETE *
 ~~~~
 
 * インデックス（DB）の一覧（SHOW TABLES）
