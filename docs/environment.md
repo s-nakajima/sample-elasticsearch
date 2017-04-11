@@ -78,3 +78,6 @@ $ curl -XGET http://localhost:9200
 
 http://127.0.0.1:5601
 
+<a href="https://raw.githubusercontent.com/s-nakajima/sample-elasticsearch/master/docs/kibana.PNG">
+<img src="https://raw.githubusercontent.com/s-nakajima/sample-elasticsearch/master/docs/kibana.PNG" width="480px">
+</a>
