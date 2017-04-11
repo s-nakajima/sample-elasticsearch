@@ -40,4 +40,9 @@ composer install
 
 ## 参考
 
+### ElasticSearch
  * [elasticsearch documents](https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/index.html)
+ * http://morizyun.github.io/blog/elasticsearch-server-basic-api/ (mappingについて)
+ * http://qiita.com/4cteru/items/074d8dc956103c36b7fa (bulkについて)
+ * https://medium.com/hello-elasticsearch/elasticsearch-9a8743746467 (mappingについて)
+ * http://qiita.com/kompiro/items/5abeae93dc386ab669bf (mappingについて)
