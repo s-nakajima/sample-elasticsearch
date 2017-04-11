@@ -53,7 +53,7 @@ GET _aliases
 ~~~~
 
 
-## PHPからElasticSearchにアクセスする
+## サンプルプログラム
 
 ### インストール
 ~~~~
