@@ -1,7 +1,7 @@
-ElasticSearchサンプルプログラム
+ElasticSearchの導入方法
 =======
 
-## 環境構築
+## ElasticSearchの導入方法
 
 ~~~~
 # sudo -s
