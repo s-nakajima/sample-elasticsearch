@@ -3,7 +3,7 @@ ElasticSearchサンプルプログラム
 
 ## ElasticSearch本体のインストール
 
-### 
+### 環境構築
 ~~~~
 # sudo -s
 
@@ -15,8 +15,10 @@ ElasticSearchサンプルプログラム
 # cp /home/vagrant/default/elasticsearch/elasticsearch.repo /etc/yum.repos.d/
 # cp /home/vagrant/default/elasticsearch/kibana.repo /etc/yum.repos.d/
 # yum -y install elasticsearch kibana
-# cp /home/vagrant/default/elasticsearch/kibana.yml /etc/kibana/
-# mv /etc/kibana/kibana.yml /etc/kibana/kibana.yml.dist
+# vi /etc/kibana/kibana.yml
+#--以下をserver.host: "0.0.0.0"に修正
+#server.host: "localhost"
+server.host: "0.0.0.0"
 
 #-- 起動設定 
 # systemctl restart elasticsearch
@@ -27,8 +29,16 @@ ElasticSearchサンプルプログラム
 # systemctl start kibana
 # systemctl is-enabled kibana
 
+#--プラグインの追加
+# /usr/share/elasticsearch/bin/elasticsearch-plugin install mapper-attachments
+# /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
+# /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-kuromoji
+# systemctl restart elasticsearch
+
+#-- 以下sudoでなくて良い
+
 #-- elasticsearchの動作確認
-# curl -XGET http://localhost:9200
+$ curl -XGET http://localhost:9200
 {
   "name" : "24gWFF6",
   "cluster_name" : "elasticsearch",
@@ -43,8 +53,63 @@ ElasticSearchサンプルプログラム
   "tagline" : "You Know, for Search"
 }
 
+#-- インデックス（DB）作成
+$ curl -XPUT http://localhost:9200/hoge_index
+
+#-- インデックス（DB）の削除
+$ curl -XDELETE http://localhost:9200/hoge_index
+
 ~~~~
 
+### ElasticSearch のコマンド
+#### curlによるコマンド
+* インデックス（DB）作成
+~~~~
+$ curl -XPUT http://localhost:9200/hoge_index
+~~~~
+
+* インデックス（DB）の削除
+~~~~
+$ curl -XDELETE http://localhost:9200/hoge_index
+~~~~
+
+* 全インデックス（DB）の削除
+~~~~
+$ curl -XDELETE http://localhost:9200/*
+~~~~
+
+* インデックス（DB）の一覧（SHOW TABLES）
+~~~~
+$ curl -XGET http://localhost:9200/_aliases
+~~~~
+
+
+#### kibanaによるコマンド
+* インデックス（DB）作成
+~~~~
+PUT hoge_index
+    or
+PUT /hoge_index
+~~~~
+
+* インデックス（DB）の削除
+~~~~
+DELETE hoge_index
+    or
+DELETE /hoge_index
+~~~~
+
+* 全インデックス（DB）の削除
+~~~~
+DELETE /*
+    or
+DELETE /*
+~~~~
+
+* インデックス（DB）の一覧（SHOW TABLES）
+~~~~
+GET _aliases
+~~~~
 
 
 ## PHPからElasticSearchにアクセスする
