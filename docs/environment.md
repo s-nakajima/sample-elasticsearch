@@ -1,8 +1,6 @@
 ElasticSearchの導入方法
 =======
 
-## ElasticSearchの導入方法
-
 ~~~~
 # sudo -s
 
