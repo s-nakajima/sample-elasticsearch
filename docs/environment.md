@@ -1,13 +1,16 @@
 ElasticSearchの導入方法
 =======
 
+- JAVAのインストール
+~~~~
+# sudo -s
+# yum -y install java
+~~~~
+
+- elasticsearch、kibanaのインストール
 ~~~~
 # sudo -s
 
-#-- JAVAのインストール
-# yum -y install java
-
-#-- elasticsearch、kibanaのインストール
 # rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 # vi/etc/yum.repos.d/elasticsearch.repo
 [elasticsearch-5.x]
@@ -41,16 +44,20 @@ server.host: "0.0.0.0"
 # systemctl enable kibana
 # systemctl start kibana
 # systemctl is-enabled kibana
+~~~~
 
-#--プラグインの追加
+- ElasticSearchプラグインの追加
+~~~~
+# sudo -s
+
 # /usr/share/elasticsearch/bin/elasticsearch-plugin install mapper-attachments
 # /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
 # /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-kuromoji
 # systemctl restart elasticsearch
+~~~~
 
-#-- 以下sudoでなくて良い
-
-#-- elasticsearchの動作確認
+- elasticsearchの動作確認(sudoでなくて良い)
+~~~~
 $ curl -XGET http://localhost:9200
 {
   "name" : "24gWFF6",
@@ -65,6 +72,9 @@ $ curl -XGET http://localhost:9200
   },
   "tagline" : "You Know, for Search"
 }
+~~~~
 
-#-- ブラウザからkibanaの動作確認
+- ブラウザからkibanaの動作確認
+
 http://127.0.0.1:5601
+
