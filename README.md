@@ -3,9 +3,9 @@ ElasticSearchサンプルプログラム
 
 ## ElasticSearch本体のインストール
 
-### 環境構築
+### インストール方法構築
 
-詳しくは、こちら
+詳しくは、[こちら](https://github.com/s-nakajima/sample-elasticsearch/blob/master/docs/environment.md)
 
 
 ### ElasticSearch のコマンド
