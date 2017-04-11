@@ -25,7 +25,7 @@ $ curl -XDELETE http://localhost:9200/*
 
 ### タイプ（table)へドキュメント登録（追加）
 ~~~~
-$ curl -X POST http://localhost:9200/hoge_index/hoge_type/1 -d '
+$ curl -X PUT http://localhost:9200/hoge_index/hoge_type/1 -d '
 {
  "field_01": "hoge1",
  "field_02": "hoge2",
