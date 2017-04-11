@@ -1,13 +1,13 @@
 ElasticSearchの導入方法
 =======
 
-- JAVAのインストール
+### 1. JAVAのインストール
 ~~~~
 # sudo -s
 # yum -y install java
 ~~~~
 
-- elasticsearch、kibanaのインストール
+### 2. elasticsearch、kibanaのインストール
 ~~~~
 # sudo -s
 
@@ -46,7 +46,7 @@ server.host: "0.0.0.0"
 # systemctl is-enabled kibana
 ~~~~
 
-- ElasticSearchプラグインの追加
+### 3. ElasticSearchプラグインの追加
 ~~~~
 # sudo -s
 
@@ -56,7 +56,7 @@ server.host: "0.0.0.0"
 # systemctl restart elasticsearch
 ~~~~
 
-- elasticsearchの動作確認(sudoでなくて良い)
+### 4. elasticsearchの動作確認(sudoでなくて良い)
 ~~~~
 $ curl -XGET http://localhost:9200
 {
@@ -74,7 +74,7 @@ $ curl -XGET http://localhost:9200
 }
 ~~~~
 
-- ブラウザからkibanaの動作確認
+### 5. ブラウザからkibanaの動作確認
 
 http://127.0.0.1:5601
 
