@@ -300,7 +300,7 @@ class AppType {
 			throw $ex;
 		}
 
-var_dump($results);
+print_r($results);
 
 		return ! $results['errors'];
 	}

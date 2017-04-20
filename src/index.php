@@ -1,10 +1,12 @@
 <?php
+ob_start();
+
 require '../vendors/autoload.php';
 require 'Elasticsearch/UsersIndex.php';
 
 //インデックス作成
 $UsersIndex = new UsersIndex();
-var_dump(get_class($UsersIndex));
+print_r(get_class($UsersIndex));
 
 $result = $UsersIndex->create([
 	'user_profile' => [
@@ -15,7 +17,7 @@ $result = $UsersIndex->create([
 		]
 	]
 ]);
-var_dump($result);
+print_r($result);
 
 //データ登録(_bluk)
 $data = [];
@@ -29,14 +31,21 @@ for ($i = 1; $i <= 5; $i++) {
 	];
 }
 $result = $UsersIndex->UserProfile->bulk($data);
-var_dump($result);
+print_r($result);
 
 //データ(search)取得
 $result = $UsersIndex->UserProfile->search();
-var_dump($result);
+print_r($result);
 
 $result = $UsersIndex->UserProfile->get('5');
-var_dump($result);
+print_r($result);
 
-$result = $UsersIndex->delete();
-var_dump($result);
+//$result = $UsersIndex->delete();
+//print_r($result);
+
+
+$contents = ob_get_contents();
+
+ob_end_clean();
+
+echo nl2br(preg_replace("/ /", '&nbsp;', $contents));
