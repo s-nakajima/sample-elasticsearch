@@ -301,6 +301,8 @@ class AppType {
 		}
 
 print_r($results);
+echo "\n";
+echo "\n";
 
 		return ! $results['errors'];
 	}

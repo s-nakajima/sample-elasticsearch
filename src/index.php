@@ -7,6 +7,8 @@ require 'Elasticsearch/UsersIndex.php';
 //インデックス作成
 $UsersIndex = new UsersIndex();
 print_r(get_class($UsersIndex));
+echo "\n";
+echo "\n";
 
 $result = $UsersIndex->create([
 	'user_profile' => [
@@ -18,6 +20,8 @@ $result = $UsersIndex->create([
 	]
 ]);
 print_r($result);
+echo "\n";
+echo "\n";
 
 //データ登録(_bluk)
 $data = [];
@@ -32,13 +36,19 @@ for ($i = 1; $i <= 5; $i++) {
 }
 $result = $UsersIndex->UserProfile->bulk($data);
 print_r($result);
+echo "\n";
+echo "\n";
 
 //データ(search)取得
 $result = $UsersIndex->UserProfile->search();
-print_r($result);
+print_r($result); 
+echo "\n";
+echo "\n";
 
 $result = $UsersIndex->UserProfile->get('5');
 print_r($result);
+echo "\n";
+echo "\n";
 
 //$result = $UsersIndex->delete();
 //print_r($result);
