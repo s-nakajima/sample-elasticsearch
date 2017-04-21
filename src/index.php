@@ -25,13 +25,13 @@ echo "\n";
 
 //データ登録(_bluk)
 $data = [];
-for ($i = 1; $i <= 5; $i++) {
+for ($i = 0; $i <= 5; $i++) {
 	$data[] = [
-		'index' => ['_index' => $UsersIndex->index, '_type' => 'user_profile', '_id' => $i]
+		'index' => ['_index' => $UsersIndex->index, '_type' => 'user_profile', '_id' => $i + 20]
 	];
 	$data[] = [
-		'id' => (string)$i,
-		'title' => 'テスト ' . $i
+		'id' => (string)($i + 2),
+		'title' => 'テスト ' .  ($i + 2)
 	];
 }
 $result = $UsersIndex->UserProfile->bulk($data);
@@ -45,7 +45,7 @@ print_r($result);
 echo "\n";
 echo "\n";
 
-$result = $UsersIndex->UserProfile->get('5');
+$result = $UsersIndex->UserProfile->get('20');
 print_r($result);
 echo "\n";
 echo "\n";
