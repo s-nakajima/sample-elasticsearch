@@ -50,3 +50,4 @@ composer install
  * https://medium.com/hello-elasticsearch/elasticsearch-9a8743746467 (mappingについて)
  * http://qiita.com/kompiro/items/5abeae93dc386ab669bf (mappingについて)
  * https://developers.eure.jp/tech/elasticsearch_search_query/ (search query)
+ * http://qiita.com/jtodo/items/be053be4aa704e6c57d0 (複雑なsearch query)
