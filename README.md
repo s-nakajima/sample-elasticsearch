@@ -51,3 +51,4 @@ composer install
  * http://qiita.com/kompiro/items/5abeae93dc386ab669bf (mappingについて)
  * https://developers.eure.jp/tech/elasticsearch_search_query/ (search query)
  * http://qiita.com/jtodo/items/be053be4aa704e6c57d0 (複雑なsearch query)
+ * http://qiita.com/vanhuyz/items/04a6871ae5f53ba5a97f (複雑なsearch query)
